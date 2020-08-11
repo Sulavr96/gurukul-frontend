@@ -5,7 +5,7 @@ Education technology based web application.
 ## How to install
 
 #Install frontend dependencies
-npm install
+npm install -- save package name
 
 ## Start the client
 npm start
