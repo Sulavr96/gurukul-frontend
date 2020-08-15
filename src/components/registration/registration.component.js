@@ -68,7 +68,9 @@ class Registration extends Component {
     render() {
         const { data, errors } = this.state;
         return (
-            <Form onSubmit={this.handleSubmit}>
+
+            <Form className="col-sm-2 col-md-5 col-lg-3" onSubmit={this.handleSubmit}>
+                 <h2>Signup</h2>
                 <FormGroup>
                     <Label for="firstName">First Name</Label>
                     <Input id="firstName" value={data.firstName} invalid={errors.firstName ? true : false} name="firstName" onChange={this.handleChange} />
@@ -101,6 +103,7 @@ class Registration extends Component {
 
                 <Button color="primary">Register</Button>
             </Form>
+        
         );
     }
 }
