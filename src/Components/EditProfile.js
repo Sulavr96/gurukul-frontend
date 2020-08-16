@@ -33,19 +33,19 @@ class EditProfile extends React.Component{
                     <div style={{margin:"20px"}}>
                     <Form>
                         <Form.Field>
-                        <label style={{fontFamily:"cursive",fontSize:"25px"}}>First Name</label>
+                        <label style={{fontFamily:"cursive",fontSize:"25px" ,color:"white"}}>First Name</label>
                         <input placeholder='First Name' />
                         </Form.Field>
                         <Form.Field>
-                        <label style={{fontFamily:"cursive",fontSize:"25px"}}>Last Name</label>
+                        <label style={{fontFamily:"cursive",fontSize:"25px",color:"white"}}>Last Name</label>
                         <input placeholder='Last Name' />
                         </Form.Field>
                         <Form.Field>
-                        <label style={{fontFamily:"cursive",fontSize:"25px"}}>User Name</label>
+                        <label style={{fontFamily:"cursive",fontSize:"25px",color:"white"}}>User Name</label>
                         <input placeholder='User Name' />
                         </Form.Field>
                         <Form.Field>
-                        <label style={{fontFamily:"cursive",fontSize:"25px"}}>Email</label>
+                        <label style={{fontFamily:"cursive",fontSize:"25px",color:"white"}}>Email</label>
                         <input placeholder='Email' />
                         </Form.Field>
                         <Button type='submit'>Submit</Button>
