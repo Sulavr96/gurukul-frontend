@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Form, Input, Label, FormGroup, FormFeedback, Button } from 'reactstrap';
 import { isEmail } from 'validator';
+import SignOutLinks from "../navbar/SignOutLinks.component";
+
 
 class Registration extends Component {
 
@@ -68,6 +70,7 @@ class Registration extends Component {
     render() {
         const { data, errors } = this.state;
         return (
+            
 
             <Form className="col-sm-2 col-md-5 col-lg-3" onSubmit={this.handleSubmit}>
                  <h2>Signup</h2>
@@ -103,6 +106,7 @@ class Registration extends Component {
 
                 <Button color="primary">Register</Button>
             </Form>
+        
         
         );
     }

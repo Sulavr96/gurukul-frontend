@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Form, Input, Label, FormGroup, FormFeedback, Button} from 'reactstrap';
-//import FacebookLogin from 'react-facebook-login';
+import { Form, Input, Label, FormGroup, FormFeedback, Button } from 'reactstrap';
+import SignOutLinks from "../navbar/SignOutLinks.component";
 
 
- class Login extends Component{
+class Login extends Component {
     render() {
         return (
-        
+
             <Form className="col-sm-2 col-md-5 col-lg-3">
                 <h2>Login</h2>
 
@@ -23,11 +23,9 @@ import { Form, Input, Label, FormGroup, FormFeedback, Button} from 'reactstrap';
                 </FormGroup>
 
                 <Button color="primary">Login</Button>
-                
-
 
             </Form>
-         
+
         );
     }
 }
