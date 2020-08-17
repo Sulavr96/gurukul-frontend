@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Form, Input, Label, FormGroup, FormFeedback, Button } from 'reactstrap';
 import { isEmail } from 'validator';
 import SignOutLinks from "../navbar/SignOutLinks.component";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 
 
 class Registration extends Component {
@@ -104,9 +106,9 @@ class Registration extends Component {
                     <FormFeedback>{errors.confirmPassword}</FormFeedback>
                 </FormGroup>
 
-                <Button color="primary">Register</Button>
+                <Button color="primary">Register</Button><br/>
+                <Link to ="/login">Already have an account</Link><br/>
             </Form>
-        
         
         );
     }

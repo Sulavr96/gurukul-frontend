@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { NavLink } from 'reactstrap';
 
 const SignOutLinks = () => {
@@ -13,18 +13,22 @@ const SignOutLinks = () => {
               <i className="fa fa-bars"></i>
         </button>
         <ul className="right">
-       
 
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+          <form className="form-inline my-2 my-lg-0">
+            <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
+            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
 
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
-              
-                <Link to= "/login">LOGIN</Link>
-                <Link to= "/signup">SIGNUP</Link>
+
+              <Link to="/login">LOGIN</Link>
+              <Link to="/signup">SIGNUP</Link>
+
+              <ul className="navbar-nav ml-auto nav-flex-icons">
+                <i className="fa fa-user"></i>
+              </ul>
 
             </ul>
           </div>

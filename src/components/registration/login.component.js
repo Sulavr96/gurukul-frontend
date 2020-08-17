@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Input, Label, FormGroup, FormFeedback, Button } from 'reactstrap';
 import SignOutLinks from "../navbar/SignOutLinks.component";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 class Login extends Component {
@@ -22,7 +23,9 @@ class Login extends Component {
                     <FormFeedback></FormFeedback>
                 </FormGroup>
 
-                <Button color="primary">Login</Button>
+                <Button color="primary">Login</Button><br/>
+                <Link to ="/signup">Create a new account</Link><br/>
+                <Link to="/">Forgot Password</Link>
 
             </Form>
 
