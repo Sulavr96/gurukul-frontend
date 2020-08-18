@@ -2,7 +2,7 @@ import React from 'react';
 // import { Header } from 'semantic-ui-react';
 
 import { Image,Divider,Button,Form } from 'semantic-ui-react';
-import '../css/main.css';
+import '../../css/main.css';
 // import {connect} from 'react-redux';
 // import DefaultUserPic from "../uploads/team-male.jpg";
 // const axios = require('axios');

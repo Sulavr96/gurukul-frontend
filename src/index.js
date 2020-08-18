@@ -20,7 +20,7 @@ ReactDOM.render(
             <Switch>
                 <Route exact path="/" component={App}/>
                 <Route path="/profile" component={UserProfile}/>
-                <Route path="/profile/edit" component={EditProfile}/>
+                <Route path="/edit" component={EditProfile}/>
                 <Route path="/" component={SignOutLinks}/>
             </Switch>
             <Switch>
