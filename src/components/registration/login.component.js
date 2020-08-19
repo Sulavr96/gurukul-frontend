@@ -13,25 +13,28 @@ class LoginMain extends Component {
     constructor(props){
         super(props);
         this.state = {
-            userInfo:{}
+            email : '',
+            password : ''
         }
     }
 
 
     render() {
+        console.log(this.state.userInfo)
         return (
+        
             <Form className="col-sm-2 col-md-5 col-lg-3">
                 <h2>Login</h2>
 
                 <FormGroup>
                     <Label for="email">Email</Label>
-                    <EmailInput placeholder={'Email'} value={this.state.userInfo.email} onChange={value=>this.inputEmailValue(value)}/>
+                    <EmailInput placeholder={'Email'} value={this.state.email} onChange={value=>this.inputEmailValue(value)}/>
                     <FormFeedback></FormFeedback>
                 </FormGroup>
 
                 <FormGroup>
                     <Label for="password">Password</Label>
-                    <PasswordInput placeholder={'Password'} value={this.state.userInfo.password} onChange={value=>this.inputPasswordValue(value)}/>
+                    <PasswordInput placeholder={'Password'} value={this.state.password} onChange={value=>this.inputPasswordValue(value)}/>
                     <FormFeedback></FormFeedback>
                 </FormGroup>
 
@@ -47,7 +50,10 @@ class LoginMain extends Component {
 
     handleClick(event){
         event.preventDefault();
-        this.props.userLogin(this.state.userInfo);
+        let userInfo ={}
+        userInfo.email = this.state.email;
+        userInfo.password = this.state.password;
+        this.props.userLogin(userInfo);
     }
 
     inputPasswordValue(value){
@@ -63,11 +69,16 @@ class LoginMain extends Component {
     }
 }
 
+function mapStateToProps(state){
+    return {
+        ...state
+    }
+}
 
 function mapDispatchToProps(dispatch){
 return bindActionCreators(LoginActionCreator, dispatch);
 }
 
-const Login = connect(null, mapDispatchToProps)(LoginMain);
+const Login = connect(mapStateToProps, mapDispatchToProps)(LoginMain);
 
 export default Login;
