@@ -12,20 +12,20 @@ import Login from './components/registration/login.component';
 import Registration from './components/registration/registration.component';
 import SignInLinks from './components/navbar/SignInLinks.component';
 import SignOutLinks from './components/navbar/SignOutLinks.component';
+import ForgotPassword from './components/registration/forgot_password.component';
+
 
 
 ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch>
-                <Route exact path="/" component={App}/>
-                <Route path="/profile" component={UserProfile}/>
-                <Route path="/edit" component={EditProfile}/>
                 <Route path="/" component={SignOutLinks}/>
             </Switch>
             <Switch>
                 <Route path="/login" component={Login}/>
                 <Route path="/signup" component={Registration}/>
+                <Route path="/forgotpassword" component={ForgotPassword}/>
             </Switch>
         </Router>
     </Provider>,

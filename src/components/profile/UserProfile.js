@@ -1,11 +1,7 @@
 import React from 'react';
-// import { Header } from 'semantic-ui-react';
-
 import { Button,Form } from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
-// import {connect} from 'react-redux';
-// import DefaultUserPic from "../uploads/team-male.jpg";
-// const axios = require('axios');
+
 
 
 class UserProfile extends React.Component{

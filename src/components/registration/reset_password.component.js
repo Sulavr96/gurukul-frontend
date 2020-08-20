@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import { Form, Input, Label, FormGroup, FormFeedback, Button } from 'reactstrap';
-import SignOutLinks from "../navbar/SignOutLinks.component";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
-class Login extends Component {
+
+class ResetPassword extends Component {
     render() {
         return (
 
             <Form className="col-sm-2 col-md-5 col-lg-3">
-                <h2>Login</h2>
-
+                <h2>Set a new password!</h2>
                 <FormGroup>
                     <Label for="email">Email</Label>
                     <Input id="email" name="email" />
@@ -23,9 +21,14 @@ class Login extends Component {
                     <FormFeedback></FormFeedback>
                 </FormGroup>
 
-                <Button color="primary">Login</Button><br/>
-                <Link to ="/signup">Create a new account</Link><br/>
-                <Link to="/forgotpassword">Forgot Password</Link>
+                <FormGroup>
+                    <Label for="Confirmpassword">Confirm Password</Label>
+                    <Input id="confirmpassword" type="password" name="confirmpassword" />
+                    <FormFeedback></FormFeedback>
+                </FormGroup>
+            
+                <Button color="primary">Reset Password</Button><br/>
+                <Link to="/login">Login</Link>
 
             </Form>
 
@@ -33,4 +36,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default ResetPassword;
