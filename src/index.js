@@ -6,10 +6,14 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter as Router, Switch , Route} from 'react-router-dom';
+import UserProfile from './components/profile/UserProfile';
+import EditProfile from './components/profile/EditProfile';
 import Login from './components/registration/login.component';
 import Registration from './components/registration/registration.component';
 import SignInLinks from './components/navbar/SignInLinks.component';
 import SignOutLinks from './components/navbar/SignOutLinks.component';
+import ForgotPassword from './components/registration/forgot_password.component';
+
 
 
 ReactDOM.render(
@@ -17,10 +21,9 @@ ReactDOM.render(
         <Router>
             <Switch>
                 <Route path="/" component={SignOutLinks}/>
-            </Switch>
-            <Switch>
                 <Route path="/login/" component={Login}/>
                 <Route path="/signup/" component={Registration}/>
+                <Route path="/forgotpassword/" component={ForgotPassword}/>
             </Switch>
         </Router>
     </Provider>,

@@ -40,7 +40,7 @@ class LoginMain extends Component {
 
                 <Button color="primary" onClick={(event)=>this.handleClick(event)}>Login</Button><br/>
                 <Link to ="/signup">Create a new account</Link><br/>
-                <Link to="/">Forgot Password</Link>
+                <Link to="/forgotpassword">Forgot Password</Link>
 
             </Form>
 
