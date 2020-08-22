@@ -54,6 +54,7 @@ class LoginMain extends Component {
         userInfo.email = this.state.email;
         userInfo.password = this.state.password;
         this.props.userLogin(userInfo);
+        this.props.history.push('/');
     }
 
     inputPasswordValue(value){

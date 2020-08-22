@@ -19,8 +19,8 @@ ReactDOM.render(
                 <Route path="/" component={SignOutLinks}/>
             </Switch>
             <Switch>
-                <Route path="/login" component={Login}/>
-                <Route path="/signup" component={Registration}/>
+                <Route path="/login/" component={Login}/>
+                <Route path="/signup/" component={Registration}/>
             </Switch>
         </Router>
     </Provider>,
