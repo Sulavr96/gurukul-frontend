@@ -1,50 +1,30 @@
 import React from 'react';
-import { Button,Form } from 'semantic-ui-react';
-import {Link} from 'react-router-dom';
-
-
 
 class UserProfile extends React.Component{
     render(){
-        return(
-            <div>
-                <div style={{
-                    display:"flex",
-                    justifyContent:"space-around",
-                    margin:"18px 0px"
-                    }}>
-                    <div>
-                        <img style={{width:"250px",height:"250px",borderRadius:"60px"}} src="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png" alt="profilepic"/>
-                    </div>
-                    <div style={{
-                        display:"inline",padding:"30px",color:"white"
-                    }}>
-
-                    <Form>
-                        <Form.Field>
-                        <label style={{fontFamily:"cursive",fontSize:"25px"}}>First Name</label>
-                        {/* <input placeholder='First Name' /> */}
-                        </Form.Field>
-                        <Form.Field>
-                        <label style={{fontFamily:"cursive",fontSize:"25px"}}>Last Name</label>
-                        {/* <input placeholder='Last Name' /> */}
-                        </Form.Field>
-                        <Form.Field>
-                        <label style={{fontFamily:"cursive",fontSize:"25px"}}>User Name</label>
-                        {/* <input placeholder='Last Name' /> */}
-                        </Form.Field>
-                        <Form.Field>
-                        <label style={{fontFamily:"cursive",fontSize:"25px"}}>Email</label>
-                        {/* <input placeholder='Last Name' /> */}
-                        </Form.Field>
-                        {/* <Button type='submit'>Edit Profile</Button> */}
-                    </Form>
-                    <Link to="/edit"><button>Edit Profile</button></Link>
-
-                    
+        return(   
+            <div class="container mt-5 ml-0">
+                <div class="row">
+                <div class="col">
+                    <div className="card" style={{width: "18rem"}}>
+                        <img className="card-img-top" src="https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png" alt="Profile Image"/>
+                        <div className="card-body">
+                            <p class="card-text">bio here!!</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        )}
+                <div class="col">
+                    <div className="card">
+                        <h5 class="card-header font-weight-bold">User Information</h5>
+                        <div class="card-body">
+                            Information heree!!                         
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>          
+        )
+    }
 }
-   export default UserProfile;
+
+export default UserProfile;

@@ -7,7 +7,6 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter as Router, Switch , Route} from 'react-router-dom';
 import UserProfile from './components/profile/UserProfile';
-import EditProfile from './components/profile/EditProfile';
 import Login from './components/registration/login.component';
 import Registration from './components/registration/registration.component';
 import SignInLinks from './components/navbar/SignInLinks.component';
@@ -26,6 +25,7 @@ ReactDOM.render(
                 <Route path="/login" component={Login}/>
                 <Route path="/signup" component={Registration}/>
                 <Route path="/forgotpassword" component={ForgotPassword}/>
+                <Route path="/user/profile" component={UserProfile}/>
             </Switch>
         </Router>
     </Provider>,
