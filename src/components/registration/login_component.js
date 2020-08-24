@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Form, Input, Label, FormGroup, FormFeedback, Button } from 'reactstrap';
-import SignOutLinks from "../navbar/SignOutLinks.component";
+import { Form, Label, FormGroup, Button } from 'reactstrap';
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import EmailInput from '../common/email';
 import PasswordInput from '../common/password';
@@ -20,30 +19,25 @@ class LoginMain extends Component {
 
 
     render() {
-        console.log(this.state.userInfo)
-        return (
-        
+        return (     
             <Form className="col-sm-2 col-md-5 col-lg-3">
-                <h2>Login</h2>
+            <h2>Login</h2>
 
-                <FormGroup>
-                    <Label for="email">Email</Label>
-                    <EmailInput placeholder={'Email'} value={this.state.email} onChange={value=>this.inputEmailValue(value)}/>
-                    <FormFeedback></FormFeedback>
-                </FormGroup>
+            <FormGroup>
+                <Label for="email">Email</Label>
+                <EmailInput placeholder={'Email'} value={this.state.email} onChange={value=>this.inputEmailValue(value)}/>
+            </FormGroup>
 
-                <FormGroup>
-                    <Label for="password">Password</Label>
-                    <PasswordInput placeholder={'Password'} value={this.state.password} onChange={value=>this.inputPasswordValue(value)}/>
-                    <FormFeedback></FormFeedback>
-                </FormGroup>
+            <FormGroup>
+                <Label for="password">Password</Label>
+                <PasswordInput placeholder={'Password'} value={this.state.password} onChange={value=>this.inputPasswordValue(value)}/>
+            </FormGroup>
 
-                <Button color="primary" onClick={(event)=>this.handleClick(event)}>Login</Button><br/>
-                <Link to ="/signup">Create a new account</Link><br/>
-                <Link to="/forgotpassword">Forgot Password</Link>
+            <Button color="primary" onClick={(event)=>this.handleClick(event)}>Login</Button><br/>
+            <Link to ="/signup">Create a new account</Link><br/>
+            <Link to="/forgotpassword">Forgot Password</Link>
 
-            </Form>
-
+        </Form>
         );
     }
 
