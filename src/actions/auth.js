@@ -12,7 +12,7 @@ const loginSuccess = user => {
 export const userLogin = (user) =>
     dispatch => {
         console.log(user)
-        api.post('/auth/login', user )
+        api.post('/auth/login/', user )
             .then(response =>{
                 dispatch(loginSuccess(response.data))
             })
