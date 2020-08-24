@@ -9,6 +9,7 @@
     "@types/reactstrap": "^8.5.0",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.2",
+    "cors": "^2.8.5",
     "email-validator": "^2.0.4",
     "link": "^0.1.5",
     "materialize-css": "^1.0.0-rc.2",
