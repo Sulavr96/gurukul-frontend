@@ -3,10 +3,12 @@ import { Form, Input, Label, FormGroup, FormFeedback, Button } from 'reactstrap'
 import { isEmail } from 'validator';
 import SignOutLinks from "../navbar/SignOutLinks.component";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import * as RegistrationActionCreator from "../../actions/auth";
+import {bindActionCreators} from "redux";
+import { connect } from 'react-redux';
 
 
-
-class Registration extends Component {
+class RegistrationMain extends Component {
 
     constructor(props) {
         super(props);
@@ -16,102 +18,108 @@ class Registration extends Component {
 
     getInitialState = () => ({
         data: {
-            firstName: '',
-            lastName: '',
-            email: '',
-            password: '',
-            confirmPassword: ''
+            middle_name:''
         },
         errors: {}
     });
 
-    handleChange = (e) => {
-        this.setState({
-            data: {
-                ...this.state.data,
-                [e.target.name]: e.target.value
-            },
-            errors: {
-                ...this.state.errors,
-                [e.target.name]: ''
-            }
-        });
-    }
+   
 
     validate = () => {
         const { data } = this.state;
         let errors = {};
 
-        if (data.firstName === '') errors.firstName = 'First Name can not be blank.';
-        if (data.lastName === '') errors.lastName = 'Last Name can not be blank.';
+        if (data.first_name === '') errors.first_name = 'First Name can not be blank.';
+        if (data.last_name === '') errors.last_name = 'Last Name can not be blank.';
         if (!isEmail(data.email)) errors.email = 'Email must be valid.';
         if (data.email === '') errors.email = 'Email can not be blank.';
         if (data.password === '') errors.password = 'Password must be valid.';
-        if (data.confirmPassword !== data.password) errors.confirmPassword = 'Passwords must match.';
+        if (data.confirm_password !== data.password) errors.confirm_password = 'Passwords must match.';
 
         return errors;
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
 
-        const { data } = this.state;
-
-        const errors = this.validate();
-
-        if (Object.keys(errors).length === 0) {
-            console.log(data);
-            //Call an api here
-            //Resetting the form
-            this.setState(this.getInitialState());
-        } else {
-            this.setState({ errors });
-        }
-    }
 
     render() {
         const { data, errors } = this.state;
+        console.log(this.state.data)
         return (
-            
-
             <Form className="col-sm-2 col-md-5 col-lg-3" onSubmit={this.handleSubmit}>
                  <h2>Signup</h2>
                 <FormGroup>
                     <Label for="firstName">First Name</Label>
-                    <Input id="firstName" value={data.firstName} invalid={errors.firstName ? true : false} name="firstName" onChange={this.handleChange} />
-                    <FormFeedback>{errors.firstName}</FormFeedback>
+                    <Input id="firstName" value={data.first_name} invalid={errors.first_name ? true : false} name="first_name" onChange={(event) => this.handleChange(event)} />
+                    <FormFeedback>{errors.first_name}</FormFeedback>
+                </FormGroup>
+
+                <FormGroup>
+                    <Label for="MiddleName">Middle Name</Label>
+                    <Input id="MiddleName" value={data.middle_name || ''} name="middle_name" onChange={(event) => this.handleChange(event)} />
                 </FormGroup>
 
                 <FormGroup>
                     <Label for="lastName">Last Name</Label>
-                    <Input id="lastName" value={data.lastName} invalid={errors.lastName ? true : false} name="lastName" onChange={this.handleChange} />
-                    <FormFeedback>{errors.lastName}</FormFeedback>
+                    <Input id="lastName" value={data.last_name} invalid={errors.last_name ? true : false} name="last_name" onChange={(event) => this.handleChange(event)} />
+                    <FormFeedback>{errors.last_name}</FormFeedback>
                 </FormGroup>
 
                 <FormGroup>
                     <Label for="email">Email</Label>
-                    <Input id="email" value={data.email} invalid={errors.email ? true : false} name="email" onChange={this.handleChange} />
+                    <Input id="email" value={data.email} invalid={errors.email ? true : false} name="email" onChange={(event) => this.handleChange(event)} />
                     <FormFeedback>{errors.email}</FormFeedback>
                 </FormGroup>
 
                 <FormGroup>
                     <Label for="password">Password</Label>
-                    <Input id="password" value={data.password} type="password" name="password" invalid={errors.password ? true : false} onChange={this.handleChange} />
+                    <Input id="password" value={data.password} type="password" name="password" invalid={errors.password ? true : false} onChange={(event) => this.handleChange(event)} />
                     <FormFeedback>{errors.password}</FormFeedback>
                 </FormGroup>
 
                 <FormGroup>
                     <Label for="confirmPassword">Confirm Password</Label>
-                    <Input id="confirmPassword" value={data.confirmPassword} type="password" name="confirmPassword" invalid={errors.confirmPassword ? true : false} onChange={this.handleChange} />
-                    <FormFeedback>{errors.confirmPassword}</FormFeedback>
+                    <Input id="confirmPassword" value={data.confirm_password} type="password" name="confirm_password" invalid={errors.confirm_password ? true : false} onChange={(event) => this.handleChange(event)} />
+                    <FormFeedback>{errors.confirm_password}</FormFeedback>
                 </FormGroup>
 
-                <Button color="primary">Register</Button><br/>
+                <Button color="primary" onClick={(event)=>this.handleClick(event)}>Register</Button>
                 <Link to ="/login">Already have an account</Link><br/>
             </Form>
         
         );
     }
+
+    handleChange(event){
+        this.setState({
+            data: {
+                ...this.state.data,
+                [event.target.name] : event.target.value
+            },
+            errors: {
+                ...this.state.errors,
+                [event.target.name]: ''
+            }
+        })
+    }
+
+    handleClick(event){
+        event.preventDefault();
+        this.props.userRegister(this.state.data);
+        this.props.history.push('/login');
+    }
+
 }
 
-export default Registration ;
+function mapStateToProps(state){
+    return {
+        ...state
+    }
+}
+
+function mapDispatchToProps(dispatch){
+return bindActionCreators(RegistrationActionCreator, dispatch);
+}
+
+const Registration = connect(mapStateToProps, mapDispatchToProps)(RegistrationMain);
+
+export default Registration;
