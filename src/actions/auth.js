@@ -33,8 +33,10 @@ export const userRegister = (user) =>
 export const userLogin = (user) =>
     dispatch => {
         console.log(user)
-        api.post('/user/login/', user )
+            api.post('/user/login/', user )        
             .then(response =>{
+                const { token } = response.data;
+                localStorage.setItem('token', token);
                 dispatch(loginSuccess(response.data))
             })
             .catch(error =>{
