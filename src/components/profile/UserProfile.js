@@ -1,7 +1,27 @@
 import React from 'react';
+import * as UserProfileActionCreator from "../../actions/userprofile";
+import {bindActionCreators} from "redux";
+import { connect } from 'react-redux';
 
-class UserProfile extends React.Component{
+
+class UserProfileMain extends React.Component{
+
+
+    componentDidMount(){
+        console.log(localStorage.getItem('userId'))
+        let id = localStorage.getItem('userId')
+        this.props.getuserInfo(id);
+    }
+
     render(){
+        let userInfo;
+        if (this.props.userProfile && this.props.userProfile.user){
+            userInfo = this.props.userProfile.user.map(user => {
+                return <tbody key={user.id}>
+                <tr>{user.first_name}</tr>
+                </tbody>
+            })
+        } 
         return(   
             <div className="container mt-5 ml-0">
                 <div className="row">
@@ -17,7 +37,9 @@ class UserProfile extends React.Component{
                     <div className="card">
                         <h5 className="card-header font-weight-bold">User Information</h5>
                         <div className="card-body">
-                            Information heree!!                         
+                            <table>
+                                {userInfo}
+                            </table>                       
                         </div>
                     </div>
                 </div>
@@ -26,5 +48,18 @@ class UserProfile extends React.Component{
         )
     }
 }
+
+function mapStateToProps(state){
+    return {
+        ...state
+    }
+}
+
+function mapDispatchToProps(dispatch){
+return bindActionCreators(UserProfileActionCreator, dispatch);
+}
+
+const UserProfile = connect(mapStateToProps, mapDispatchToProps)(UserProfileMain);
+
 
 export default UserProfile;
