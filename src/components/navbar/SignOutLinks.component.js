@@ -5,7 +5,7 @@ import { NavLink } from 'reactstrap';
 const SignOutLinks = () => {
   return (
 
-    <nav className="navbar navbar-expand-lg navbar-light bg-light" id="mainNav">
+    <nav className="navbar navbar-expand-lg navbar-light top-navbar" id="mainNav">
       <div className="container">
         <a className="navbar-brand" href="" >GURUKUL</a>
         <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +19,7 @@ const SignOutLinks = () => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
 
-              <Link to="/login/" className="btn btn-outline-success my-2 my-sm-0">Login/Signup</Link>
+              <Link to="/login/" className="btn btn-outline-success my-2 my-sm-0">Login/Register</Link>
 
               <ul className="navbar-nav ml-auto nav-flex-icons">
                 <i className="fa fa-user fa-2x"></i>
