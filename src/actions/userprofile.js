@@ -13,7 +13,7 @@ const getUserInfoSuccess = user => {
 
 export const getuserInfo = (id) =>
     dispatch => {
-        api.get('/user/'+id, id )
+        api.get('/user/'+id+'/', id )
             .then(response =>{     
                 console.log(response,'########')          
                 dispatch(getUserInfoSuccess(response.data))
