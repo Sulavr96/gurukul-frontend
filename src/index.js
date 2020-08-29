@@ -11,7 +11,6 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter as Router, Switch , Route} from 'react-router-dom';
 import UserProfile from './components/profile/UserProfile';
-import EditProfile from './components/profile/EditProfile';
 import Login from './components/registration/login_component';
 import Registration from './components/registration/registration.component';
 import SignInLinks from './components/navbar/SignInLinks.component';
@@ -19,7 +18,6 @@ import SignOutLinks from './components/navbar/SignOutLinks.component';
 import ForgotPassword from './components/registration/forgot_password.component';
 import sidebar from './components/sidebar/sidebar';
 import Home from './components/homepage/home'
-
 
 
 ReactDOM.render(
@@ -32,6 +30,7 @@ ReactDOM.render(
                 <Route path="/forgotpassword/" component={ForgotPassword}/>
                 <Route path="/sidebar/" component={sidebar}/>
                 <Route path="/home/" component={Home}/>
+                <Route path="/user/profile" component={UserProfile}/>
             </Switch>
         </Router>
     </Provider>,

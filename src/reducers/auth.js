@@ -3,6 +3,11 @@ const auth = (state={}, action) => {
         case 'USER_LOGIN_REQUEST':
             return{
                 ...state,
+                user: [action.payload.user]
+            }
+        case 'USER_REGISTRATION_SUCCESS':
+            return{
+                ...state,
                 user: [...state.payload.user, action.payload.user]
             }
         default:
