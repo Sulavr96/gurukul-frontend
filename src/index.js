@@ -5,24 +5,32 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import store from './store';
-import { BrowserRouter as Router, Switch , Route} from 'react-router-dom';
-import UserProfile from './components/profile/UserProfile';
+import { BrowserRouter as Router, Switch , Route, Redirect} from 'react-router-dom';
 import Login from './components/registration/login_component';
 import Registration from './components/registration/registration.component';
-import SignInLinks from './components/navbar/SignInLinks.component';
-import SignOutLinks from './components/navbar/SignOutLinks.component';
-import ForgotPassword from './components/registration/forgot_password.component';
 
+
+const AuthenticatedRoute = ({component:Component, ...rest})=>{
+    const token = localStorage.getItem('token');
+    return <Route
+        {...rest}
+        render ={(props) => (
+            !!token ? <Component {...props}/>
+                : <Redirect
+                    to='/login'
+                />
+        )
+        }
+    />
+}
 
 ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch>
-                <Route exact path="/" component={SignOutLinks}/>
-                <Route path="/login/" component={Login}/>
-                <Route path="/signup/" component={Registration}/>
-                <Route path="/forgotpassword/" component={ForgotPassword}/>
-                <Route path="/user/profile" component={UserProfile}/>
+                <Route exact path="/login/" component={Login}/>
+                <Route exact path="/signup/" component={Registration}/>  
+                <AuthenticatedRoute path="/" component={App}/>
             </Switch>
         </Router>
     </Provider>,
