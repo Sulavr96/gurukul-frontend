@@ -6,20 +6,19 @@ import { Link } from 'react-router-dom';
 
 class ViewProfile extends React.Component{   
 
-    constructor(props) {
+    constructor(props){
         super(props);
         this.state = {
             user:[]
         }
-        this.inputBioValue = this.inputBioValue(this);
+    }
+
+    componentDidMount() {
+        this.inputBioValue = this.inputBioValue.bind(this);
         this.inputFirstNameValue = this.inputFirstNameValue.bind(this);
         this.inputMidNameValue = this.inputMidNameValue.bind(this);
         this.inputLastNameValue = this.inputLastNameValue.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
-    }
-
-    componentDidMount() {
-        console.log(localStorage.getItem('userId'))
         let id = localStorage.getItem('userId')
         this.props.getuserInfo(id);
     }
@@ -40,7 +39,7 @@ class ViewProfile extends React.Component{
                             {this.props.editMode ?
                                 <StyledTextField placeholder={'Bio here...'} value={this.state.user.bio || ''} onChange={value=>this.inputBioValue(value)}/>
                             :
-                                <p className="card-text">{user.bio? user.bio : ''}</p>
+                                <p className="card-text">{user.bio}</p>
                             }
                         </div>
                     </div>
@@ -89,7 +88,7 @@ class ViewProfile extends React.Component{
         this.setState({
             user : {
                 ...this.state.user,
-                first_name : value
+                first_name:value
             }
         })
     }
@@ -98,7 +97,7 @@ class ViewProfile extends React.Component{
         this.setState({
             user:{
                 ...this.state.user,
-                middle_name : value
+                middle_name:value
             }
 
         })
@@ -108,16 +107,17 @@ class ViewProfile extends React.Component{
         this.setState({
             user:{
                 ...this.state.user,
-                last_name : value
+                last_name:value
         }
         })
     }
 
     inputBioValue(value){
+        console.log(value)
         this.setState({
             user:{
                 ...this.state.user,
-                bio : value
+                bio:value
         }
         })  
     }
