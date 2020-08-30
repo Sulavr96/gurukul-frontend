@@ -1,7 +1,7 @@
 import api from '../api';
 
 const noticeFetchSuccess = notice => {
-    return{
+    return {
         type: 'NOTICE_FETCH_SUCCESS',
         payload: {
             notice
@@ -14,6 +14,7 @@ export const noticeFetch = _ =>
         api.get('/notices/')
             .then(response => {
                 dispatch(noticeFetchSuccess(response.data))
+                
 
             })
             .catch(errors => {

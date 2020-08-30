@@ -6,32 +6,23 @@ import { connect } from 'react-redux';
 class NoticeView extends Component {
     constructor(props) {
         super(props);
-        this.state = [
-                {
-                    id: '',
-                    title : '',
-                    content : ''
-                }
-        ]           
+        this.state = []           
     }
 
     componentDidMount() {
         this.props.noticeFetch()
     }
 
-    noticeFetch() {
 
-        
-    }
 
     render() {
         return (
             <div>
                 <h1> Notice!!! </h1>
-                <h2> </h2>
+                <h2>{this.state} </h2>
             </div>
         );
-        console.log(this.props,'***********');
+    
     }
     
 }
