@@ -11,7 +11,6 @@ function Home() {
     <div className="Home">
 
       <SignOutLinks></SignOutLinks>
-      
 
   
   <header className="masthead">
