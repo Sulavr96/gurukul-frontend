@@ -3,7 +3,7 @@ const notice = (state={}, action) => {
         case 'NOTICE_FETCH_SUCCESS':
             return{
                 ...state,
-                notice : [action.payload.notice]
+                notice : action.payload.notice
             }
         default:
             return{

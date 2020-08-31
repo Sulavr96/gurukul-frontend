@@ -4,38 +4,28 @@ import {bindActionCreators} from "redux";
 import { connect } from 'react-redux';
 
 class NoticeView extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        notice: []
-    }
-}
 
     componentDidMount() {
         this.props.noticeFetch()
     }
 
     render() {
-         if(this.props.notice && this.props.notice.notice){
-            this.state.notice = this.props.notice.notice[0]
-        }
         let notice_view;
-        console.log(this.props.notice.notice)
         if(this.props.notice && this.props.notice.notice) {
-        return (
-            <div>
-                <h1> Notice!!! </h1>
-                <ul>
-               {notice_view=this.props.notice.notice.map(n =>
-                     <li key={n.title}>{n.title}</li>)}
+            notice_view = this.props.notice.notice.map(noticeObj=> {         
+                return <ul key={noticeObj.id}>
+                    <li>{noticeObj.title}</li>
+                    <p>{noticeObj.content}</p>
                 </ul>
-            </div>
-        );
+                }
+            )
         }
         return (
             <div>
-            {notice_view}
-            </div>);
+                <h1> Notice</h1>
+                    {notice_view}            
+            </div>
+            );
     }    
 }
 
