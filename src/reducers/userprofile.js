@@ -10,7 +10,7 @@ const userProfile = (state={}, action) => {
         case UPDATE_USER_INFO_SUCCESS:
             return{
                 ...state,
-                user : { [action.payload.id]: action.user, ...state.user }
+                user : {[action.payload.id]: action.payload.user, ...state.payload.user }
             }
         default:
             return {

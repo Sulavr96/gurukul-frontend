@@ -11,7 +11,7 @@ class UserProfileMain extends React.Component{
             <>
                 <Switch>
                     <Route exact path="/user" render={(props)=><ViewProfile {...this.props} {...props}/>}/>
-                    <Route path="/user/:id" render={(props)=><ViewProfile editMode={true} {...this.props} {...props}/>} />
+                    <Route path="/user/:id/" render={(props)=><ViewProfile editMode={true} {...this.props} {...props}/>} />
                 </Switch>
             </>
         )

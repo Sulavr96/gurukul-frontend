@@ -2,6 +2,7 @@ import React from 'react';
 import StyledInput from '../common/input';
 import StyledTextField from '../common/textfield';
 import StyledButton from '../common/button';
+import StyledEmail from '../common/email';
 import { Link } from 'react-router-dom';
 
 class ViewProfile extends React.Component{   
@@ -9,24 +10,22 @@ class ViewProfile extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            user:[]
+            user:{}
         }
-    }
-
-    componentDidMount() {
         this.inputBioValue = this.inputBioValue.bind(this);
         this.inputFirstNameValue = this.inputFirstNameValue.bind(this);
         this.inputMidNameValue = this.inputMidNameValue.bind(this);
         this.inputLastNameValue = this.inputLastNameValue.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+    }
+
+    componentDidMount() {
         let id = localStorage.getItem('userId')
         this.props.getuserInfo(id);
+        
     }
 
     render(){
-        if(this.props.userProfile && this.props.userProfile.user && this.props.editMode){
-            this.state.user = this.props.userProfile.user[0]
-        }
         let userInfo;
         if (this.props.userProfile && this.props.userProfile.user){
             userInfo = this.props.userProfile.user.map(user => {
@@ -34,7 +33,10 @@ class ViewProfile extends React.Component{
                 <div className="row">
                 <div className="col"> 
                     <div className="card" style={{width: "18rem"}}>
-                        <img className="card-img-top" src={user.profile_image_url? user.profile_image_url : "https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png"} alt="Profile Image"/>
+                        {this.props.editMode ? <img className="card-img-top" src={this.state.user.profile_image_url || "https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png" } alt="Profile Image"/>
+                        :   
+                            <img className="card-img-top" src={user.profile_image_url? user.profile_image_url : "https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png"} alt="Profile Image"/>
+                        }
                         <div className="card-body">
                             {this.props.editMode ?
                                 <StyledTextField placeholder={'Bio here...'} value={this.state.user.bio || ''} onChange={value=>this.inputBioValue(value)}/>
@@ -53,9 +55,13 @@ class ViewProfile extends React.Component{
                                 <StyledInput placeholder={'First Name'} value={this.state.user.first_name || ''} onChange={(value)=>this.inputFirstNameValue(value)}/>
                                 <StyledInput placeholder={'Middle Name'} value={this.state.user.middle_name || ''} onChange={(value)=>this.inputMidNameValue(value)}/>
                                 <StyledInput placeholder={'Last Name'} value={this.state.user.last_name || ''} onChange={(value)=>this.inputLastNameValue(value)}/>
+                                <input type="text" value={this.state.user.email} readOnly></input>
                             </div>
                         :
-                            <p> Name: {user.first_name} {user.middle_name} {user.last_name}</p>
+                            <div>
+                                <p> Name: {user.first_name} {user.middle_name} {user.last_name}</p>
+                                <p>Email: {user.email}</p>
+                            </div>
                         } 
 
                         {this.props.editMode ?
@@ -70,7 +76,7 @@ class ViewProfile extends React.Component{
                 {this.props.editMode ?
                     ''
                 :
-                    <Link to={`/user/${user.id}`}>Update </Link>
+                    <Link to={`/user/${user.id}/`}>Update </Link>
                 }
                 </div>
             </div>   
@@ -122,7 +128,14 @@ class ViewProfile extends React.Component{
         })  
     }
 
+    componentDidUpdate(){
+        if(this.props.userProfile && this.props.userProfile.user && this.props.editMode){
+            this.state.user = this.props.userProfile.user[0]
+        }
+    }
+
     handleUpdate(event, id){
+        console.log(this.state.user)
         event.preventDefault();
         this.props.updateUserInfo(id, this.state.user)
     }
