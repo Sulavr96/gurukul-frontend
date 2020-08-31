@@ -6,6 +6,7 @@ const noticeFetchSuccess = notice => {
         payload: {
             notice
         }
+        
     }
 }
 
@@ -14,8 +15,6 @@ export const noticeFetch = _ =>
         api.get('/notices/')
             .then(response => {
                 dispatch(noticeFetchSuccess(response.data))
-                
-
             })
             .catch(errors => {
                 console.log(errors)

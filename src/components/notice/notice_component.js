@@ -6,25 +6,37 @@ import { connect } from 'react-redux';
 class NoticeView extends Component {
     constructor(props) {
         super(props);
-        this.state = []           
+        this.state = {
+        notice: []
     }
+}
 
     componentDidMount() {
         this.props.noticeFetch()
     }
 
-
-
     render() {
+         if(this.props.notice && this.props.notice.notice){
+            this.state.notice = this.props.notice.notice[0]
+        }
+        let notice_view;
+        console.log(this.props.notice.notice)
+        if(this.props.notice && this.props.notice.notice) {
         return (
             <div>
                 <h1> Notice!!! </h1>
-                <h2>{this.state} </h2>
+                <ul>
+               {notice_view=this.props.notice.notice.map(n =>
+                     <li key={n.title}>{n.title}</li>)}
+                </ul>
             </div>
         );
-    
-    }
-    
+        }
+        return (
+            <div>
+            {notice_view}
+            </div>);
+    }    
 }
 
 function mapStateToProps(state){
