@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Input, Label, FormGroup, FormFeedback, Button } from 'reactstrap';
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+//import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import SignOutLinks from "../navbar/SignOutLinks.component";
 
 
