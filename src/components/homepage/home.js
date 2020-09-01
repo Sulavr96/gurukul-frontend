@@ -1,5 +1,4 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './home.css';
 import SignOutLinks from '../navbar/SignOutLinks.component'
 
@@ -16,9 +15,7 @@ function Home() {
   <header className="masthead">
     <div className="container">
       <div className="intro-text">
-        <div className="intro-lead-in"> Welcome to the Gurukul,</div>
-        <div className="intro-heading text-uppercase">the first app of it's kind in Nepal.</div>
-        <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Explore</a>
+         <a className="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Explore</a>
       </div>
     </div>
   </header>
