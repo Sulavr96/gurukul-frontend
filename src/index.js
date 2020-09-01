@@ -39,7 +39,6 @@ ReactDOM.render(
                 <Route path="/user/profile" component={UserProfile}/>
                 <Route path="/dashboard" component={Dashboard}/>
                 <Route path="/user/notice/" component={Notice} />
-
             </Switch>
         </Router>
     </Provider>,
