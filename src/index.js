@@ -3,12 +3,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/bootstrap.min.css'
 import './assets/css/agency.min.css'
-//Dashboard
-//import './assets/css/pe-icon-7-stroke.css';
-//import './assets/js/jquery.3.2.1.min.js';
-//import './assets/js/bootstrap.min.js';
-//import './assets/js/chartist.min.js';
-//import './assets/js/bootstrap-notify.js';
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -18,14 +13,12 @@ import { BrowserRouter as Router, Switch , Route} from 'react-router-dom';
 import UserProfile from './components/profile/UserProfile';
 import Login from './components/registration/login_component';
 import Registration from './components/registration/registration.component';
-import SignInLinks from './components/navbar/SignInLinks.component';
-import SignOutLinks from './components/navbar/SignOutLinks.component';
 import ForgotPassword from './components/registration/forgot_password.component';
 import Home from './components/homepage/home'
 import ResetPassword from './components/registration/reset_password.component';
-import Dashboard from './components/dashboard/dashboard'
 import Notice from './components/notice/notice_component';
-
+import SDashboard from './components/dashboard/student';
+import TDashboard from './components/dashboard/teacher';
 
 ReactDOM.render(
     <Provider store={store}>
@@ -37,9 +30,9 @@ ReactDOM.render(
                 <Route path="/forgotpassword/" component={ForgotPassword}/>
                 <Route path="/password-reset/" component={ResetPassword}/>
                 <Route path="/user/profile" component={UserProfile}/>
-                <Route path="/dashboard" component={Dashboard}/>
                 <Route path="/user/notice/" component={Notice} />
-
+                <Route path="/dashboard/teacher" component={TDashboard} />
+                <Route path="/dashboard/student" component={SDashboard} />
             </Switch>
         </Router>
     </Provider>,
