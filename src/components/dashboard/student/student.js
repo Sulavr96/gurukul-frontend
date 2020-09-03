@@ -1,19 +1,20 @@
 import React from 'react';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import SignInLinks from '../navbar/SignInLinks.component'
 
 
 
 
 
-function TDashboard() {
+
+
+function SDashboard() {
     return (
 
         <div>
-            <SignInLinks></SignInLinks>
-
-
-            <SideNav>
+            <SideNav 
+            onSelect={(selected) => {
+                
+    }}>
 
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected="home">
@@ -25,36 +26,36 @@ function TDashboard() {
                             Home
             </NavText>
                     </NavItem>
-                    <NavItem eventKey="account">
+                    <NavItem eventKey="profile">
                         <NavIcon>
                             <i className="fa fa-fw fa-user" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
-                            Account
+                            Profile
             </NavText>
 
                     </NavItem>
 
 
-                    <NavItem eventKey="courses">
+
+                    <NavItem eventKey="Assignments">
+                        <NavIcon>
+                            <i className="fa fa-fw fa-copy" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>
+                            Assignments
+            </NavText>
+
+                    </NavItem>
+
+
+                    <NavItem eventKey="Courses">
                         <NavIcon>
                             <i className="fa fa-fw fa-book" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
                             Courses
             </NavText>
-                    </NavItem>
-
-
-
-                    <NavItem eventKey="Students">
-                        <NavIcon>
-                            <i className="fa fa-fw fa-users" style={{ fontSize: '1.75em' }} />
-                        </NavIcon>
-                        <NavText>
-                            Students
-            </NavText>
-
                     </NavItem>
 
 
@@ -75,4 +76,4 @@ function TDashboard() {
     );
 }
 
-export default TDashboard;
+export default SDashboard;

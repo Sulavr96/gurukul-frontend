@@ -1,22 +1,21 @@
 import React from 'react';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import SignInLinks from '../navbar/SignInLinks.component'
+import SignInLinks from '../../navbar/SignInLinks.component'
+import { Form, Input, Label, FormGroup, Button } from 'reactstrap';
+import Card from 'react-bootstrap/Card'
 
 
 
 
 
-function SDashboard() {
+function TDashboard() {
     return (
 
         <div>
             <SignInLinks></SignInLinks>
 
 
-            <SideNav 
-            onSelect={(selected) => {
-                
-    }}>
+            <SideNav>
 
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected="home">
@@ -28,36 +27,36 @@ function SDashboard() {
                             Home
             </NavText>
                     </NavItem>
-                    <NavItem eventKey="profile">
+                    <NavItem eventKey="account">
                         <NavIcon>
                             <i className="fa fa-fw fa-user" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
-                            Profile
+                            Account
             </NavText>
 
                     </NavItem>
 
 
-
-                    <NavItem eventKey="Assignments">
-                        <NavIcon>
-                            <i className="fa fa-fw fa-copy" style={{ fontSize: '1.75em' }} />
-                        </NavIcon>
-                        <NavText>
-                            Assignments
-            </NavText>
-
-                    </NavItem>
-
-
-                    <NavItem eventKey="Courses">
+                    <NavItem eventKey="courses">
                         <NavIcon>
                             <i className="fa fa-fw fa-book" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
                             Courses
             </NavText>
+                    </NavItem>
+
+
+
+                    <NavItem eventKey="Students">
+                        <NavIcon>
+                            <i className="fa fa-fw fa-users" style={{ fontSize: '1.75em' }} />
+                        </NavIcon>
+                        <NavText>
+                            Students
+            </NavText>
+
                     </NavItem>
 
 
@@ -73,9 +72,7 @@ function SDashboard() {
             </SideNav>
         </div>
 
-
-
     );
 }
 
-export default SDashboard;
+export default TDashboard;

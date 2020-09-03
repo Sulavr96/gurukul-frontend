@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/bootstrap.min.css'
 import './assets/css/agency.min.css'
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
@@ -17,8 +16,9 @@ import ForgotPassword from './components/registration/forgot_password.component'
 import Home from './components/homepage/home'
 import ResetPassword from './components/registration/reset_password.component';
 import Notice from './components/notice/notice_component';
-import SDashboard from './components/dashboard/student';
-import TDashboard from './components/dashboard/teacher';
+import SDashboard from './components/dashboard/student/student';
+import TDashboard from './components/dashboard/teacher/teacher';
+import T_home from './components/dashboard/teacher/home';
 
 ReactDOM.render(
     <Provider store={store}>
@@ -33,6 +33,8 @@ ReactDOM.render(
                 <Route path="/user/notice/" component={Notice} />
                 <Route path="/dashboard/teacher" component={TDashboard} />
                 <Route path="/dashboard/student" component={SDashboard} />
+                <Route path="/teacherhome" component={T_home} />
+            
             </Switch>
         </Router>
     </Provider>,
