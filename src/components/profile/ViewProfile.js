@@ -128,9 +128,12 @@ class ViewProfile extends React.Component{
         })  
     }
 
-    componentDidUpdate(){
-        if(this.props.userProfile && this.props.userProfile.user && this.props.editMode){
-            this.state.user = this.props.userProfile.user[0]
+    componentDidUpdate(prevProps, prevState, snapshot){
+        if(prevProps.userProfile.user != this.props.userProfile.user){
+            this.setState({
+                user : this.props.userProfile.user[0]
+            })
+            
         }
     }
 
@@ -138,6 +141,7 @@ class ViewProfile extends React.Component{
         console.log(this.state.user)
         event.preventDefault();
         this.props.updateUserInfo(id, this.state.user)
+        this.props.history.push('/user/')
     }
 
 }
