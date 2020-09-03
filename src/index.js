@@ -13,7 +13,8 @@ import SignInLinks from './components/navbar/SignInLinks.component';
 import SignOutLinks from './components/navbar/SignOutLinks.component';
 import ForgotPassword from './components/registration/forgot_password.component';
 import Notice from './components/notice/notice_component';
-
+import NoticeCreate from './components/notice/notice_create';
+import NoticeMain from './components/notice/notice_main'
 
 ReactDOM.render(
     <Provider store={store}>
@@ -24,7 +25,8 @@ ReactDOM.render(
                 <Route path="/signup/" component={Registration}/>
                 <Route path="/forgotpassword/" component={ForgotPassword}/>
                 <Route path="/user/profile" component={UserProfile}/>
-                <Route path="/user/notice/" component={Notice} />
+                <Route path="/notice" component={NoticeMain} />
+                
             </Switch>
         </Router>
     </Provider>,
