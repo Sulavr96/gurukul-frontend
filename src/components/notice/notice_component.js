@@ -55,18 +55,6 @@ class NoticeView extends Component {
             );
     }    
 }
-
-function mapStateToProps(state){
-    return {
-        ...state
-    }
-}
-
-function mapDispatchToProps(dispatch){
-    return bindActionCreators(NoticeActionCreator, dispatch);
-    }
-
-const Notice = connect(mapStateToProps, mapDispatchToProps)(NoticeView);
     
 
-export default Notice;
+export default NoticeView;

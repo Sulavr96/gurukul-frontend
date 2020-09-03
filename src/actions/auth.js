@@ -37,6 +37,7 @@ export const userLogin = (user) =>
             .then(response =>{
                 const { token } = response.data;
                 localStorage.setItem('token', token);
+                localStorage.setItem("userId",response.data.user_id)
                 dispatch(loginSuccess(response.data))
             })
             .catch(error =>{
