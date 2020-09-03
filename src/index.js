@@ -17,12 +17,8 @@ import store from './store';
 import { BrowserRouter as Router, Switch , Route, Redirect} from 'react-router-dom';
 import Login from './components/registration/login_component';
 import Registration from './components/registration/registration.component';
-import SignInLinks from './components/navbar/SignInLinks.component';
-import SignOutLinks from './components/navbar/SignOutLinks.component';
 import ForgotPassword from './components/registration/forgot_password.component';
-import Home from './components/homepage/home'
 import ResetPassword from './components/registration/reset_password.component';
-import Dashboard from './components/dashboard/dashboard'
 import Notice from './components/notice/notice_component';
 
 
@@ -49,9 +45,6 @@ ReactDOM.render(
                 <Route exact path="/forgotpassword/" component={ForgotPassword}/>
                 <Route exact path="/password-reset/" component={ResetPassword}/>
                 <AuthenticatedRoute path="/" component={App}/>
-                <Route exact path="/" component={Home}/>   
-                <Route path="/dashboard" component={Dashboard}/>
-                <Route path="/user/notice/" component={Notice} />
             </Switch>
         </Router>
     </Provider>,
