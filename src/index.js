@@ -3,13 +3,7 @@ import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './assets/css/bootstrap.min.css'
 import './assets/css/agency.min.css'
-//Dashboard
-//import './assets/css/pe-icon-7-stroke.css';
-//import './assets/js/jquery.3.2.1.min.js';
-//import './assets/js/bootstrap.min.js';
-//import './assets/js/chartist.min.js';
-//import './assets/js/bootstrap-notify.js';
-
+import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
@@ -20,6 +14,9 @@ import Registration from './components/registration/registration.component';
 import ForgotPassword from './components/registration/forgot_password.component';
 import ResetPassword from './components/registration/reset_password.component';
 import Notice from './components/notice/notice_component';
+import T_profile from './components/dashboard/teacher/t_profile';
+import Courses from './components/dashboard/teacher/courses/course';
+import Home from './components/homepage/home'
 
 
 const AuthenticatedRoute = ({component:Component, ...rest})=>{
@@ -36,15 +33,25 @@ const AuthenticatedRoute = ({component:Component, ...rest})=>{
     />
 }
 
+
+
 ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch>
+                <Route exact path="/" component={Home}/>
+=
                 <Route exact path="/login/" component={Login}/>
                 <Route exact path="/signup/" component={Registration}/>  
                 <Route exact path="/forgotpassword/" component={ForgotPassword}/>
                 <Route exact path="/password-reset/" component={ResetPassword}/>
+
+                <Route path="/user/notice/" component={Notice} />
+                <Route path="/teacher/profile" component={T_profile} />
+                <Route path="/teacher/courses/" component={Courses} />
                 <AuthenticatedRoute path="/" component={App}/>
+             
+
             </Switch>
         </Router>
     </Provider>,

@@ -294,7 +294,7 @@ function Home() {
         <div className="container">
           <div className="row">
             <div className="col-lg-12 text-center">
-              <h2 className="section-heading text-uppercase">Contact Us</h2>
+              <h2 className="section-heading text-uppercase">Want to become an instructor?</h2>
               <h3 className="section-subheading text-muted"></h3>
             </div>
           </div>
@@ -304,9 +304,10 @@ function Home() {
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
-                      <input className="form-control" id="name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name." />
+                      <input className="form-control" id="full_name" type="text" placeholder="Your Name *" required="required" data-validation-required-message="Please enter your name." />
                       <p className="help-block text-danger"></p>
                     </div>
+                    
                     <div className="form-group">
                       <input className="form-control" id="email" type="email" placeholder="Your Email *" required="required" data-validation-required-message="Please enter your email address." />
                       <p className="help-block text-danger"></p>
@@ -322,6 +323,14 @@ function Home() {
                       <p className="help-block text-danger"></p>
                     </div>
                   </div>
+
+                  <div className="col-md-6">
+                    <div className="form-group">
+                      <input className="form-control" id = "resume" placeholder="Your Message *" required="required" data-validation-required-message="Please enter a message." type="file" ></input>
+                       <p className="help-block text-danger"></p>
+                    </div>
+                  </div>
+
                   <div className="clearfix"></div>
                   <div className="col-lg-12 text-center">
                     <div id="success"></div>

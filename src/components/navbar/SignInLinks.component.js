@@ -11,29 +11,15 @@ const SignInLinks = () => {
                 </button>
                 <ul className="right">
 
-                    <form className="form-inline my-2 my-lg-0">
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"></input>
-                        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ml-auto">
-                            <li className="nav-item">
-                                <a className="nav-link" href="">STUDENTS</a>
-                            </li>
-
-                            <li className="nav-item">
-                                <a className="nav-link" href="">ASSIGNMENTS</a>
-                            </li>
                             <ul className="navbar-nav mr-auto">
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color:"black" }}>
                                         PROFILE
-                        </a>
-                                    <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a className="dropdown-item" href="#">Account</a>
-                                        <a className="dropdown-item" href="#">Setting</a>
-                                        <a className="dropdown-item" href="#">Logout</a>
-                                    </div>
+                                    </a>
+                                    
                                 </li>
                             </ul>
                         </ul>
