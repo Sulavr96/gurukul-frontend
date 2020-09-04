@@ -33,15 +33,19 @@ const AuthenticatedRoute = ({component:Component, ...rest})=>{
     />
 }
 
+
+
 ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch>
                 <Route exact path="/" component={Home}/>
+=
                 <Route exact path="/login/" component={Login}/>
                 <Route exact path="/signup/" component={Registration}/>  
                 <Route exact path="/forgotpassword/" component={ForgotPassword}/>
                 <Route exact path="/password-reset/" component={ResetPassword}/>
+
                 <Route path="/user/notice/" component={Notice} />
                 <Route path="/teacher/profile" component={T_profile} />
                 <Route path="/teacher/courses/" component={Courses} />
