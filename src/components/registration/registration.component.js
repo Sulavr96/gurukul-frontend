@@ -72,7 +72,7 @@ class RegistrationMain extends Component {
                                 <Label for="email">Email</Label>
                                 <Input id="email" value={data.email} invalid={errors.email ? true : false} name="email" onChange={(event) => this.handleChange(event)} />
                                 <FormFeedback>{errors.email}</FormFeedback>
-                            </FormGroup>cd1
+                            </FormGroup>
 
                             <FormGroup>
                                 <Label for="password">Password</Label>
