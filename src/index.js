@@ -9,7 +9,6 @@ import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
 import store from './store';
 import { BrowserRouter as Router, Switch , Route} from 'react-router-dom';
-import UserProfile from './components/profile/UserProfile';
 import Login from './components/registration/login_component';
 import Registration from './components/registration/registration.component';
 import ForgotPassword from './components/registration/forgot_password.component';
@@ -17,8 +16,10 @@ import Home from './components/homepage/home'
 import ResetPassword from './components/registration/reset_password.component';
 import Notice from './components/notice/notice_component';
 import SDashboard from './components/dashboard/student/student';
-import TDashboard from './components/dashboard/teacher/teacher';
-import T_home from './components/dashboard/teacher/home';
+import TDashboard from './components/dashboard/teacher/t_sidebar';
+import T_profile from './components/dashboard/teacher/t_profile';
+import Courses from './components/dashboard/teacher/courses/course';
+
 
 ReactDOM.render(
     <Provider store={store}>
@@ -27,13 +28,14 @@ ReactDOM.render(
                 <Route exact path="/" component={Home}/>
                 <Route path="/login/" component={Login}/>
                 <Route path="/signup/" component={Registration}/>
-                <Route path="/forgotpassword/" component={ForgotPassword}/>
+                <Route path="/forgot-password/" component={ForgotPassword}/>
                 <Route path="/password-reset/" component={ResetPassword}/>
-                <Route path="/user/profile" component={UserProfile}/>
                 <Route path="/user/notice/" component={Notice} />
-                <Route path="/dashboard/teacher" component={TDashboard} />
-                <Route path="/dashboard/student" component={SDashboard} />
-                <Route path="/teacherhome" component={T_home} />
+                <Route path="/dashboard/student/" component={SDashboard} />
+                <Route path="/teacher/profile" component={T_profile} />
+                <Route path="/teacher/courses/" component={Courses} />
+                
+            
             
             </Switch>
         </Router>

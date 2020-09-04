@@ -2,28 +2,22 @@ import React from 'react';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 
 
-
-
-
-
-
-function SDashboard() {
+function S_Dashboard() {
     return (
 
         <div>
             <SideNav 
             onSelect={(selected) => {
-                
-    }}>
 
+    }}>
                 <SideNav.Toggle />
-                <SideNav.Nav defaultSelected="home">
-                    <NavItem eventKey="home">
+                <SideNav.Nav defaultSelected="resources">
+                    <NavItem eventKey="resources">
                         <NavIcon>
                             <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
-                            Home
+                            Resource Materials
             </NavText>
                     </NavItem>
                     <NavItem eventKey="profile">
@@ -31,7 +25,7 @@ function SDashboard() {
                             <i className="fa fa-fw fa-user" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
-                            Profile
+                           Profile
             </NavText>
 
                     </NavItem>
@@ -76,4 +70,4 @@ function SDashboard() {
     );
 }
 
-export default SDashboard;
+export default S_Dashboard;

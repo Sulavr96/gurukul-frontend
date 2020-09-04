@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card'
 import { Form, Input, Label, FormGroup, Button } from 'reactstrap';
-import T_Dashboard from '../teacher/teacher'
+import T_Dashboard from './t_sidebar'
 
 
 
@@ -11,7 +11,6 @@ class T_home extends Component {
     render() {
         return (
             <div>
-
             <T_Dashboard></T_Dashboard>
 
             <div className="container mt-2 ml-6">
@@ -32,18 +31,13 @@ class T_home extends Component {
 
                     <div className="col">
                         <Card style={{ width: '40rem' }}>
-                            <Card.Header>RESOURCES</Card.Header>
+                            <Card.Header>Resources</Card.Header>
                             <Card.Body>
                                 <Card.Title>
                                     <Form>
                                         <Label>
                                             Title:
                                 <Input type="text" name="title" ></Input>
-                                        </Label><br />
-
-                                        <Label>
-                                            Course:
-                                <Input type="text" name="url" ></Input>
                                         </Label><br />
 
 
@@ -61,8 +55,11 @@ class T_home extends Component {
 
                                         <Label>
                                             Content:
-                                <Input type="file" name="content" ></Input>
+                                            <Input type="file" name="file" ></Input>
+
                                         </Label>
+
+                            
 
 
                                         <Button color="primary">Assign</Button><br />

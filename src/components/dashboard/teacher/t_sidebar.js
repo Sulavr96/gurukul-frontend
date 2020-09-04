@@ -1,14 +1,9 @@
 import React from 'react';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import SignInLinks from '../../navbar/SignInLinks.component'
-import { Form, Input, Label, FormGroup, Button } from 'reactstrap';
-import Card from 'react-bootstrap/Card'
 
 
-
-
-
-function TDashboard() {
+function T_Sidebar() {
     return (
 
         <div>
@@ -18,13 +13,14 @@ function TDashboard() {
             <SideNav>
 
                 <SideNav.Toggle />
-                <SideNav.Nav defaultSelected="home">
-                    <NavItem eventKey="home">
+                <SideNav.Nav defaultSelected="resource">
+                    <NavItem eventKey="resource">
                         <NavIcon>
-                            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                            <i className="fa fa-fw fa-book" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
-                            Home
+                            Courses
+                            
             </NavText>
                     </NavItem>
                     <NavItem eventKey="account">
@@ -40,10 +36,10 @@ function TDashboard() {
 
                     <NavItem eventKey="courses">
                         <NavIcon>
-                            <i className="fa fa-fw fa-book" style={{ fontSize: '1.75em' }} />
+                            <i className="fa fa-fw fa-copy" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
-                            Courses
+                           Due Assignments
             </NavText>
                     </NavItem>
 
@@ -75,4 +71,4 @@ function TDashboard() {
     );
 }
 
-export default TDashboard;
+export default T_Sidebar;
