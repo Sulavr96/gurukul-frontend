@@ -13,9 +13,6 @@ import Login from './components/registration/login_component';
 import Registration from './components/registration/registration.component';
 import ForgotPassword from './components/registration/forgot_password.component';
 import ResetPassword from './components/registration/reset_password.component';
-import Notice from './components/notice/notice_component';
-import T_profile from './components/dashboard/teacher/t_profile';
-import Courses from './components/dashboard/teacher/courses/course';
 import Home from './components/homepage/home'
 
 
@@ -45,13 +42,7 @@ ReactDOM.render(
                 <Route exact path="/signup/" component={Registration}/>  
                 <Route exact path="/forgotpassword/" component={ForgotPassword}/>
                 <Route exact path="/password-reset/" component={ResetPassword}/>
-
-                <Route path="/user/notice/" component={Notice} />
-                <Route path="/teacher/profile" component={T_profile} />
-                <Route path="/teacher/courses/" component={Courses} />
                 <AuthenticatedRoute path="/" component={App}/>
-             
-
             </Switch>
         </Router>
     </Provider>,

@@ -1,9 +1,10 @@
 import React from 'react';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import SignInLinks from '../../navbar/SignInLinks.component'
+import SignInLinks from '../../navbar/SignInLinks.component';
+import {Link} from "react-router-dom";
 
 
-function T_Sidebar() {
+function Teacher_SideBar() {
     return (
 
         <div>
@@ -15,8 +16,8 @@ function T_Sidebar() {
                 <SideNav.Toggle />
                 <SideNav.Nav defaultSelected="resource">
                     <NavItem eventKey="resource">
-                        <NavIcon>
-                            <i className="fa fa-fw fa-book" style={{ fontSize: '1.75em' }} />
+                        <NavIcon>                          
+                            <Link className="nav-link " to="/teacher/courses/"> <span><i className="fa fa-fw fa-book" style={{ fontSize: '1.75em' }}/></span></Link>
                         </NavIcon>
                         <NavText>
                             Courses
@@ -25,7 +26,7 @@ function T_Sidebar() {
                     </NavItem>
                     <NavItem eventKey="account">
                         <NavIcon>
-                            <i className="fa fa-fw fa-user" style={{ fontSize: '1.75em' }} />
+                            <Link className="nav-link " to="/teacher/profile/"><i className="fa fa-fw fa-user" style={{ fontSize: '1.75em' }}/> </Link>
                         </NavIcon>
                         <NavText>
                             Account
@@ -40,7 +41,7 @@ function T_Sidebar() {
                         </NavIcon>
                         <NavText>
                            Due Assignments
-            </NavText>
+                    </NavText>
                     </NavItem>
 
 
@@ -71,4 +72,4 @@ function T_Sidebar() {
     );
 }
 
-export default T_Sidebar;
+export default Teacher_SideBar;
