@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Student_profile from './s_profile';
 import Student_SideBar from './s_sidebar';
 import Stream from './stream';
+import Assignments from './assignments'
 import * as StudentActionCreator from '../../../actions/student';
 
 class StudentDashboardMain extends Component {
@@ -15,6 +16,7 @@ class StudentDashboardMain extends Component {
                  <Switch>
                     <Route path="/student/profile/" component={Student_profile} />
                     <Route path="/student/stream/" component={Stream} />
+                    <Route path="/student/submit-assignment/" component={Assignments} />
                 </Switch>
             </div>
 

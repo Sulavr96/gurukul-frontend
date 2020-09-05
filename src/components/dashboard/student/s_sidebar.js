@@ -31,14 +31,13 @@ function Student_SideBar() {
 
                     </NavItem>
 
-
-
                     <NavItem eventKey="Assignments">
                         <NavIcon>
-                            <i className="fa fa-fw fa-copy" style={{ fontSize: '1.75em' }} />
+                        <Link className="nav-link " to="/student/submit-assignments/"> <span><i className="fa fa-fw fa-copy" style={{ fontSize: '1.75em' }} /></span></Link>
+    
                         </NavIcon>
                         <NavText>
-                            Assignments
+                             Submit Assignments
             </NavText>
 
                     </NavItem>
