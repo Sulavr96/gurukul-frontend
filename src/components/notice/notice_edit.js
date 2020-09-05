@@ -8,11 +8,11 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
-
+import NoticeMain from './notice_component';
 
 class NoticeEditComponent extends Component {
     constructor(props){
-        super();
+        super(props);
         this.state = {
             title: '',
             content: ''
@@ -26,13 +26,11 @@ class NoticeEditComponent extends Component {
     }
 
     setNotice() {
-        if(this.props.notice && this.props.notice.notice){
-            const { notice } = this.props.notice
-            this.setState({
-                title: notice.title,
-                content: notice.content
-            })
-        }
+        const { notice } = this.props.notice
+        this.setState({
+            title: notice.title,
+            content: notice.content
+        })
     }
 
     notifySuccess = () => {
@@ -79,6 +77,14 @@ class NoticeEditComponent extends Component {
         this.notifySuccess()
         this.props.history.push('/notice/'+this.props.match.params.id)
 
+    }
+    componentDidUpdate(prevProps, prevState, snapshot){
+        if(prevProps.notice.notice !== this.props.notice.notice){
+            this.setState({
+                title : this.props.notice.notice.title,
+                content: this.props.notice.notice.content
+            })
+        }
     }
 }
 

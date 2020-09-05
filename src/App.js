@@ -3,7 +3,7 @@ import { Switch , Route} from 'react-router-dom';
 import UserProfile from './components/profile';
 import Home from './components/homepage/home';
 import Dashboard from './components/dashboard/dashboard';
-import Notice from './components/notice'
+import NoticeMain from './components/notice/notice_main'
 
 
 class App extends React.Component {
@@ -19,7 +19,7 @@ class App extends React.Component {
                         <UserProfile/>
                     </Route>
                     <Route path="/notice/">
-                        <Notice/>
+                        <NoticeMain/>
                     </Route>
             </Switch>
         );

@@ -3,19 +3,36 @@ import * as NoticeActionCreator from '../../actions/notice';
 import {bindActionCreators} from "redux";
 import { connect } from 'react-redux';
 import '../../css/notice.css';
-import { Button } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import NoticeEdit from "./notice_edit";
+import NoticDeleteModal from './notice_delete_modal';
 
 class NoticeView extends Component {
-    
-    componentDidMount() {
-        this.props.noticeFetch()
+    constructor(props){
+        super(props);
+        this.state = {
+            isModalOpen: false
+        }
+       
     }
-    
 
+    componentDidMount() {
+        this.props.noticeFetch()  
+    }
+
+   
+
+    toggleDeleteModal = () => {
+        this.setState({
+            isModalOpen: !this.state.isModalOpen
+        });
+    }
+
+
+
+    
     render() {
         let notice_view;
         if(this.props.notice && this.props.notice.notice) {
@@ -30,7 +47,9 @@ class NoticeView extends Component {
                                             Edit <FontAwesomeIcon icon={faEdit}/>
                                         </Button> 
                                     </Link>
-                                   <Button color="danger" className="edit-button del-button"> Delete <FontAwesomeIcon icon={faTrash} /> </Button>
+                                    <Button color="danger" className="edit-button del-button" onClick={() => this.deleteModal(noticeObj.id)} > 
+                                        Delete <FontAwesomeIcon icon={faTrash} />
+                                    </Button>
                                 </div>
                                 <span>Posted at: {(new Date(parseInt(noticeObj.created_at))).toLocaleDateString()}</span>
                             <p className="content">{noticeObj.content}</p>
@@ -53,7 +72,7 @@ class NoticeView extends Component {
                     {notice_view}            
             </div>
             );
-    }    
+    } 
 }
     
 
