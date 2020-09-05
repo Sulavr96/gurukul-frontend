@@ -10,7 +10,7 @@ import ResourceModal from './ResourceModal'
 class Courses extends Component {
 
     state = {
-        modal1Open: false
+        modal1Open: true
      }
    
      handleModal1Open = () => {
@@ -34,29 +34,33 @@ class Courses extends Component {
         })
      }
 
+    componentDidMount(){
+        this.props.fetchCourse();
+    }
+
     render() {
-        return (
-            <div>
-
-
-                <div className="container mt-2 ml-6">
-                    <div className="row">
-
-
-                        
-                        <div className="col">
+        let courseBody;
+        console.log(this.props.teacher.course,'&&&&&&&&&&&&&&&7')
+        if(this.props.teacher && this.props.teacher.course){
+            courseBody = this.props.teacher.course.map(course => {
+                return <div>
+                     <div className="col">
                             <Card style={{ width: '18rem' }}>
                                 <Card.Body>
-                                    <Card.Title>Django Rest Framework</Card.Title>
-                                    <Card.Text>
-                                        Share materials  as well as assignments through the link below!!
-                        </Card.Text>
-                                    <Card.Link   href="" onClick={this.handleModal1Open}>Resources</Card.Link>
+                                    <Card.Title>{course.title}</Card.Title>
+                                    <Card.Link href="" onClick={this.handleModal1Open}>Resources</Card.Link>
                                     <Card.Link href="" onClick={this.handleModal2Open}>Assignments</Card.Link>
                                 </Card.Body>
                             </Card>
                         </div>
-
+                </div>
+            })
+        }
+        return (
+            <div>
+                <div className="container mt-2 ml-6">
+                    <div className="row">                       
+                        {courseBody}
                     </div>
                 </div>
 
