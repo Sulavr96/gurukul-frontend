@@ -1,15 +1,9 @@
 import React from 'react';
-import T_Dashboard from './t_sidebar'
 
-
-class T_profile extends React.Component{
+class Teacher_profile extends React.Component{
     render(){
         return(   
-            <div>
-
-            <T_Dashboard></T_Dashboard>
-
-            <div className="container mt-2 ml-10">
+            <div className="container mt-2 ml-6">
                 <div className="row">
                 <div className="col">
                     <div className="card " style={{width: "15rem"}}>
@@ -21,17 +15,16 @@ class T_profile extends React.Component{
                 </div>
                 <div className="col">
                     <div className="card" style={{width: "30rem"}}>
-                        <h5 className="card-header font-weight-bold">User Information</h5>
+                        <h5 className="card-header font-weight-bold">Teacher Information</h5>
                         <div className="card-body">
                             Information heree!!                         
                         </div>
                     </div>
                 </div>
                 </div>
-            </div>  
-            </div>        
+            </div>         
         )
     }
 }
 
-export default T_profile;
+export default Teacher_profile;

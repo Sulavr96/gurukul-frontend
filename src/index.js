@@ -18,6 +18,7 @@ import T_profile from './components/dashboard/teacher/t_profile';
 import Courses from './components/dashboard/teacher/courses/course';
 import Home from './components/homepage/home';
 
+
 const AuthenticatedRoute = ({ component: Component, ...rest }) => {
     const token = localStorage.getItem('token');
     return <Route
@@ -38,14 +39,14 @@ ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/login/" component={Login} />
-                <Route exact path="/signup/" component={Registration} />
-                <Route exact path="/forgotpassword/" component={ForgotPassword} />
-                <Route exact path="/password-reset/" component={ResetPassword} />
-                
-                <AuthenticatedRoute path="/" component={App} />
 
+                <Route exact path="/" component={Home}/>
+
+                <Route exact path="/login/" component={Login}/>
+                <Route exact path="/signup/" component={Registration}/>  
+                <Route exact path="/forgotpassword/" component={ForgotPassword}/>
+                <Route exact path="/password-reset/" component={ResetPassword}/>
+                <AuthenticatedRoute path="/" component={App}/>
 
             </Switch>
         </Router>

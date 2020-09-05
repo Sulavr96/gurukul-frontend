@@ -37,7 +37,7 @@ class Courses extends Component {
     render() {
         return (
             <div>
-                <T_Sidebar></T_Sidebar>
+
 
                 <div className="container mt-2 ml-6">
                     <div className="row">

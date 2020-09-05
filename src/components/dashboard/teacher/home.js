@@ -28,54 +28,9 @@ class T_home extends Component {
                             </Card.Body>
                         </Card>
                     </div>
-
-                    <div className="col">
-                        <Card style={{ width: '40rem' }}>
-                            <Card.Header>Resources</Card.Header>
-                            <Card.Body>
-                                <Card.Title>
-                                    <Form>
-                                        <Label>
-                                            Title:
-                                <Input type="text" name="title" ></Input>
-                                        </Label><br />
-
-
-                                        <Label>
-                                            Resource_url:
-                                <Input type="url" name="resource_url" ></Input>
-                                        </Label><br />
-
-                                
-                                        <Label>
-                                            Description:
-                                <Input type="textarea" name="description" ></Input>
-                                        </Label><br />
-                                        <hr></hr>
-
-                                        <Label>
-                                            Content:
-                                            <Input type="file" name="file" ></Input>
-
-                                        </Label>
-
-                            
-
-
-                                        <Button color="primary">Assign</Button><br />
-
-                                    </Form>
-
-                                </Card.Title>
-                                <Card.Text>
-                                </Card.Text>
-                            </Card.Body>
-                        </Card>
                     </div>
                 </div>
             </div>
-            
-        </div>
         );
     }
 }
