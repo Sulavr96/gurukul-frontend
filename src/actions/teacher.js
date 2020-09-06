@@ -8,7 +8,6 @@ const fetchCourseSuccess = course => {
         payload: {
             course
         }
-        
     }
 }
 
