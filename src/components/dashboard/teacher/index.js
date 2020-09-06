@@ -6,6 +6,9 @@ import Courses from './courses/course';
 import Teacher_profile from './t_profile';
 import Teacher_SideBar from './t_sidebar';
 import * as TeacherActionCreator from '../../../actions/teacher';
+import * as TeacherRseourcesActionCreator from '../../../actions/resources';
+import ViewTeacherResourceList from './resources/ViewResources';
+import CreateResource from './resources/createResource';
 
 class TeacherDashboardMain extends Component {
     render(){
@@ -13,12 +16,13 @@ class TeacherDashboardMain extends Component {
             <><div>
                 <Teacher_SideBar/>
                  <Switch>
-                    <Route path="/teacher/profile/" component={Teacher_profile} />
-                    <Route path="/teacher/courses/" component={Courses} />
+                    <Route exact path="/teacher/profile/" render={(props)=><Teacher_profile {...this.props} {...props}/>}/>
+                    <Route exact path="/teacher/courses/" render={(props)=><Courses {...this.props} {...props}/>}/>
+                    <Route exact path="/teacher/resources/" render={(props)=><ViewTeacherResourceList {...this.props} {...props}/>}/>
+                    <Route path="/teacher/resources/create" render={(props)=><CreateResource {...this.props} {...props}/>}/>
+                    <Route path="/teacher/resources/:id/edit" render={(props)=><CreateResource editMode={true} {...this.props} {...props}/>}/>
                 </Switch>
-            </div>
-
-               
+            </div>            
             </>
         )
     }
@@ -31,7 +35,7 @@ function mapStateToProps(state){
 }
 
 function mapDispatchToProps(dispatch){
-    return bindActionCreators(TeacherActionCreator, dispatch);
+    return bindActionCreators(Object.assign({}, TeacherActionCreator, TeacherRseourcesActionCreator), dispatch);
     }
 
 const TeacherDashboard = connect(mapStateToProps, mapDispatchToProps)(TeacherDashboardMain);

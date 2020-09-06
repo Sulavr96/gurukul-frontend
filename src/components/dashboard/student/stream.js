@@ -12,9 +12,6 @@ function Stream() {
 
             <SignInLinks></SignInLinks>
 
-
-
-
             <div className="container mt-2 ml-6">
                 <div className="row">
 
@@ -40,24 +37,17 @@ function Stream() {
                                 resources here
                         </Card.Body>
                             <hr></hr>
-                            <input type="text" name="queries" placeholder="Add your comment" style={{ marginBottom: '10px', marginLeft: '20px', width: '40rem', borderRadius: 25, borderWidth: 2 }}></input>
-                        </Card>
-                    </div>
-                    <div className="col">
-                        <Card className="card mt-1 ml-5" style={{ width: '43rem' }}>
+                            <Form>
+                            <Input type="text" name="queries" placeholder="Add your comment" style={{ marginBottom: '10px', marginLeft: '20px', width: '40rem', borderRadius: 25, borderWidth: 2 }}></Input>
+                            <Button color="primary" style={{ marginLeft: '20px',marginBottom: '20px' }}>Post</Button>
+                            </Form>
 
-                            <Card.Header>Gurukul</Card.Header>
-                            <Card.Body>
-                                resources here
-                        </Card.Body>
-                            <hr></hr>
-                            <input type="text" name="queries" placeholder="Add your comment" style={{ marginBottom: '10px', marginLeft: '20px', width: '40rem', borderRadius: 25, borderWidth: 2 }}></input>
                         </Card>
                     </div>
                 </div>
             </div>
         </div>
-    );
+    ); 
 }
 
 export default Stream;

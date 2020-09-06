@@ -19,9 +19,9 @@ function Assignments() {
                             <Card.Header>Your work</Card.Header>
                             <Card.Body>
                                <Form>
-                                   <input type="text" name="link">Place the assignment link here</input>
+                                   <Input type="text" name="link" placeholder="Place the assignment link here"></Input>
                                    <hr></hr>
-                                   <input type="text" name="remarks"></input>
+                                   <Input type="text" name="remarks" placeholder="remarks" style={{ marginBottom: '10px', marginLeft: '5px', width: '40rem', borderRadius: 25, borderWidth: 2 }}></Input>
                                    <Button color="primary">Mark As Done</Button><br />
                                </Form>
                         </Card.Body>
