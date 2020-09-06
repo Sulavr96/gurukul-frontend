@@ -19,10 +19,10 @@ const SignOutLinks = () => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
 
-              <Link to="/login/" className="btn btn-outline-success my-2 my-sm-0">Login/Register</Link>
+              <Link to="/login/" className="btn btn-outline-warning my-2 my-sm-0">Login/Register</Link>
 
               <ul className="navbar-nav ml-auto nav-flex-icons">
-                <i className="fa fa-user fa-2x"></i>
+                <i className="fa fa-user-circle-o fa-2x"></i>
               </ul>
 
             </ul>

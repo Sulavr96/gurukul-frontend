@@ -1,13 +1,13 @@
 import React from 'react';
-import S_Dashboard from './student'
+import Student_SideBar from '../student/s_sidebar'
 
 
-class s_profile extends React.Component{
+class Student_profile extends React.Component{
     render(){
         return(   
             <div>
 
-            <S_Dashboard></S_Dashboard>
+            <Student_SideBar></Student_SideBar>
 
             <div className="container mt-2 ml-10">
                 <div className="row">
@@ -34,4 +34,4 @@ class s_profile extends React.Component{
     }
 }
 
-export default s_profile;
+export default Student_profile;
