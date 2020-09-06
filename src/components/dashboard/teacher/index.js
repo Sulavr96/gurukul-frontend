@@ -13,12 +13,10 @@ class TeacherDashboardMain extends Component {
             <><div>
                 <Teacher_SideBar/>
                  <Switch>
-                    <Route path="/teacher/profile/" component={Teacher_profile} />
-                    <Route path="/teacher/courses/" component={Courses} />
+                    <Route path="/teacher/profile/" render={(props)=><Teacher_profile {...this.props} {...props}/>}/>
+                    <Route path="/teacher/courses/" render={(props)=><Courses {...this.props} {...props}/>}/>
                 </Switch>
-            </div>
-
-               
+            </div>            
             </>
         )
     }
