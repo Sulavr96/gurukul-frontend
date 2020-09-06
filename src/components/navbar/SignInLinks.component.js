@@ -15,18 +15,11 @@ const SignInLinks = () => {
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ml-auto">
                             <ul className="navbar-nav mr-auto">
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style={{ color:"black" }}>
-                                        PROFILE
-                                    </a>
-                                    
-                                </li>
+                                <img className="rounded-circle article-img" src="{{ }}"></img>
                             </ul>
                         </ul>
 
-                        <ul className="navbar-nav ml-auto nav-flex-icons">
-                            <i className="fa fa-user fa-3x"></i>
-                        </ul>
+                      
 
 
                     </div>
