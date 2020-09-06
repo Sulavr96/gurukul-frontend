@@ -5,6 +5,7 @@ import Home from './components/homepage/home';
 import Dashboard from './components/dashboard/dashboard';
 import Notice from './components/notice';
 import Teacher_Dashboard from './components/dashboard/teacher/index';
+import Openvidu from './components/videoapp/openvidu';
 
 
 class App extends React.Component {
@@ -24,6 +25,9 @@ class App extends React.Component {
                     </Route>
                     <Route path="/notice/">
                         <Notice/>
+                    </Route>
+                    <Route path="/videosession/">
+                        <Openvidu/>
                     </Route>
             </Switch>
         );
