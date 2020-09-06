@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import * as NoticeActionCreator from '../../actions/notice';
-import {bindActionCreators} from "redux";
-import { connect } from 'react-redux';
-import '../../css/notice.css';
+import '../../assets/css/notice.css';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -14,8 +11,7 @@ class NoticeView extends Component {
         super(props);
         this.state = {
             isModalOpen: false
-        }
-       
+        }     
     }
 
     componentDidMount() {
@@ -23,16 +19,12 @@ class NoticeView extends Component {
     }
 
    
-
     toggleDeleteModal = () => {
         this.setState({
             isModalOpen: !this.state.isModalOpen
         });
     }
 
-
-
-    
     render() {
         let notice_view;
         if(this.props.notice && this.props.notice.notice) {
