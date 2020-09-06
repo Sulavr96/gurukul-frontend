@@ -1,0 +1,38 @@
+.main-container {
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: 40px;
+}
+
+.notice-container {
+    padding: 30px;
+}
+.notice-heading{
+    text-align: center;
+    margin-left: 35px;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.content {
+    padding: 10px;
+    text-align: justify;
+}
+
+.create-button {
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.edit-button {
+    height: 35px;
+}
+
+.del-button {
+    margin-left: 2px;
+}
+

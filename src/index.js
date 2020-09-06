@@ -13,8 +13,8 @@ import Login from './components/registration/login_component';
 import Registration from './components/registration/registration.component';
 import ForgotPassword from './components/registration/forgot_password.component';
 import ResetPassword from './components/registration/reset_password.component';
+import NoticeMain from './components/notice/notice_main';
 import Home from './components/homepage/home';
-
 
 const AuthenticatedRoute = ({ component: Component, ...rest }) => {
     const token = localStorage.getItem('token');
@@ -43,12 +43,11 @@ ReactDOM.render(
                 <Route exact path="/signup/" component={Registration}/>  
                 <Route exact path="/forgotpassword/" component={ForgotPassword}/>
                 <Route exact path="/password-reset/" component={ResetPassword}/>
+                <Route exact path="/notice/" component={NoticeMain} />
                 <AuthenticatedRoute path="/" component={App}/>
-
+                
             </Switch>
         </Router>
-
-        
     </Provider>,
     document.getElementById('root')
 );
