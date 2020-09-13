@@ -1,3 +1,4 @@
+
 const notice = (state={}, action) => {
     switch(action.type) {
         case 'NOTICE_FETCH_SUCCESS':

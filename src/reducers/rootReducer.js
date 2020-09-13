@@ -5,7 +5,8 @@ import notice from "../reducers/notice";
 import teacher from "../reducers/teacher";
 import assignmentInfo from "../reducers/assignment";
 import resourceInfo from "../reducers/resource";
+import instructorRequest from '../reducers/instructorRequest';
 
 export default combineReducers({
-   auth, userProfile, notice, teacher, assignmentInfo, resourceInfo
+   auth, userProfile, notice, teacher, assignmentInfo, resourceInfo, instructorRequest
 });

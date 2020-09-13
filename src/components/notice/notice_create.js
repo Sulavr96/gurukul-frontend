@@ -65,13 +65,13 @@ class NoticeCreateComponent extends Component {
 
             <FormGroup>
                     <Label for="title">Title</Label>
-                    <Input id="title" value={data.title} invalid={errors.title ? true : false} name="title" onChange={(event) => this.handleChange(event)}/>
+                    <Input id="title" value={data.title} name="title" onChange={(event) => this.handleChange(event)}/>
                     <div style={{ fontSize: 12, color: "red" }}> {errors.titleError} </div>
             </FormGroup>
 
             <FormGroup>
                 <Label for="content">Content</Label>
-                <Input id="content" type="textarea" value={data.content} invalid={errors.content ? true : false} name="content" onChange={(event) => this.handleChange(event)} />
+                <Input id="content" type="textarea" value={data.content} name="content" onChange={(event) => this.handleChange(event)} />
                 <div style={{ fontSize: 12, color: "red" }}> {errors.contentError} </div>
             </FormGroup>
             <Button color="primary" onClick={(event)=>this.handleClick(event)}>Submit</Button><br/>
