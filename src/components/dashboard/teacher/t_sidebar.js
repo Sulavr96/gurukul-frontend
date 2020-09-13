@@ -57,6 +57,15 @@ function Teacher_SideBar() {
                     </NavItem>
 
 
+                    <NavItem eventKey="Notice">
+                        <NavIcon>
+                            <Link className="fa fa-fw fa-clipboard" to="/notice/" style={{ fontSize: '1.75em' }} > </Link>
+                        </NavIcon>
+                        <NavText>
+                            Notice
+            </NavText>
+                    </NavItem>
+
                     <NavItem eventKey="Settings">
                         <NavIcon>
                             <i className="fa fa-fw fa-cogs" style={{ fontSize: '1.75em' }} />

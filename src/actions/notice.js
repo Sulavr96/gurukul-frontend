@@ -1,5 +1,4 @@
 import api from '../api';
-import { compose } from 'redux';
 
 const noticeFetchSuccess = notice => {
     return {

@@ -1,4 +1,6 @@
 import api from "../api";
+import {successToaster, failureToaster} from "../../src/components/common/toaster";
+import { ToastContainer, toast } from "react-toastify";
 
 const regristrationSuccess = user => {
     return{
@@ -10,6 +12,7 @@ const regristrationSuccess = user => {
 }
 
 const loginSuccess = user => {
+    
     return{
         type: 'USER_LOGIN_SUCCESS',
         payload: {
@@ -22,8 +25,8 @@ export const userRegister = (user) =>
     dispatch => {
         api.post('/user/register/', user )
             .then(response =>{
-                dispatch(loginSuccess(response.data))
                 
+                dispatch(loginSuccess(response.data))                
             })
             .catch(error =>{
                 console.log(error)
@@ -32,15 +35,18 @@ export const userRegister = (user) =>
 
 export const userLogin = (user) =>
     dispatch => {
-        console.log(user)
             api.post('/user/login/', user )        
             .then(response =>{
                 const { token } = response.data;
                 localStorage.setItem('token', token);
                 localStorage.setItem("userId",response.data.user_id)
+                successToaster()
                 dispatch(loginSuccess(response.data))
             })
             .catch(error =>{
                 console.log(error)
+                if(error){
+                    failureToaster()
+                }
             })
     }
